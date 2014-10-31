@@ -13,7 +13,8 @@ import android.widget.Button;
 
 public class ProtoApp extends Activity {
 	
-	Button button;
+	Button loginButton;
+	Button exitButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +26,11 @@ public class ProtoApp extends Activity {
 	
 	public void addListenerOnButton() {
 		//Determine button to add listener to
-		button = (Button) findViewById(R.id.login);
+		loginButton = (Button) findViewById(R.id.login);
+		exitButton = (Button)findViewById(R.id.exit);
 
 		//Add listener using Anonymous class
-		button.setOnClickListener(new OnClickListener() {
+		loginButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -39,6 +41,21 @@ public class ProtoApp extends Activity {
 						new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.lloydsbank.com/"));
 				startActivity(browserIntent);
 				 /**/
+			}
+
+		});
+		
+		exitButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				
+				int pid = android.os.Process.myPid();
+				android.os.Process.killProcess(pid);
+				
+				Intent intent = new Intent(Intent.ACTION_MAIN);
+				intent.addCategory(Intent.CATEGORY_HOME);
+				startActivity(intent);
 			}
 
 		});
