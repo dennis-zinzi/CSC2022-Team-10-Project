@@ -53,9 +53,9 @@ public class ProtoApp extends Activity {
 				int pid = android.os.Process.myPid();
 				android.os.Process.killProcess(pid);
 				
-				Intent intent = new Intent(Intent.ACTION_MAIN);
+				/*Intent intent = new Intent(Intent.ACTION_MAIN);
 				intent.addCategory(Intent.CATEGORY_HOME);
-				startActivity(intent);
+				startActivity(intent);*/
 			}
 
 		});
