@@ -3,6 +3,7 @@ package uk.ac.uk.b3030113.csc2022.prototpye;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+//import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -20,7 +21,7 @@ public class ProtoApp extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_proto__app);
-
+		
 		addListenerOnButton();
 	}
 	
@@ -35,12 +36,9 @@ public class ProtoApp extends Activity {
 			@Override
 			public void onClick(View v) {
 				
-				//Code to access web-page upon tapping button
-				
-				Intent browserIntent = 
-						new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.lloydsbank.com/"));
-				startActivity(browserIntent);
-				 /**/
+				/*
+				 * Code to verify login details and log user into main menu
+				 */
 			}
 
 		});
@@ -52,6 +50,7 @@ public class ProtoApp extends Activity {
 				
 				int pid = android.os.Process.myPid();
 				android.os.Process.killProcess(pid);
+				System.exit(1);
 				
 				/*Intent intent = new Intent(Intent.ACTION_MAIN);
 				intent.addCategory(Intent.CATEGORY_HOME);
