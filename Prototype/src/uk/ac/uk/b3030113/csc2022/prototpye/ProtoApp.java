@@ -1,6 +1,7 @@
 package uk.ac.uk.b3030113.csc2022.prototpye;
 
 import android.app.Activity;
+import android.view.*;
 import android.app.AlertDialog;
 import android.content.Intent;
 //import android.graphics.Color;
@@ -12,10 +13,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class ProtoApp extends Activity {
+public class ProtoApp extends Activity implements OnClickListener {
 	
-	Button loginButton;
-	Button exitButton;
+	Button balanceButton;
+	Button accountInfoButton;
+	Button contactButton;
+	Button budgetButton;
+	Button topUpButton;
+	
+	Button logoutButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,30 +33,77 @@ public class ProtoApp extends Activity {
 	
 	public void addListenerOnButton() {
 		//Determine button to add listener to
-		loginButton = (Button) findViewById(R.id.login);
-		exitButton = (Button)findViewById(R.id.exit);
+		balanceButton = (Button) findViewById(R.id.balance);
+		accountInfoButton = (Button)findViewById(R.id.accountInfo);
+		contactButton = (Button)findViewById(R.id.contact);
+		budgetButton = (Button)findViewById(R.id.budget);
+		topUpButton = (Button)findViewById(R.id.topUp);
+		logoutButton = (Button)findViewById(R.id.logout);
 
 		//Add listener using Anonymous class
-		loginButton.setOnClickListener(new OnClickListener() {
+		balanceButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				
 				/*
-				 * Code to verify login details and log user into main menu
+				 * Move to balance screen
 				 */
 			}
 
 		});
 		
-		exitButton.setOnClickListener(new OnClickListener() {
+		accountInfoButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				/*
+				 * Move to account screen
+				 */
+			}
+
+		});
+		
+		contactButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				/*
+				 * Move to contact screen
+				 */
+			}
+
+		});
+		
+		budgetButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				/*
+				 * Move to budget screen
+				 */
+			}
+
+		});
+		
+		topUpButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				/*
+				 * Move to top up screen
+				 */
+			}
+
+		});
+		
+		logoutButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				
-				int pid = android.os.Process.myPid();
-				android.os.Process.killProcess(pid);
-				System.exit(1);
+				/*
+				 * Code to logout and move back to login screen
+				 */
 				
 				/*Intent intent = new Intent(Intent.ACTION_MAIN);
 				intent.addCategory(Intent.CATEGORY_HOME);
@@ -78,5 +131,11 @@ public class ProtoApp extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		
 	}
 }
