@@ -8,16 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="uk.ac.uk.b3030113.csc2022.prototpye.ProtoApp" >
 
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/editText2"
-        android:layout_below="@+id/editText2"
-        android:layout_marginTop="39dp"
-        android:ems="10"
-        android:inputType="textPassword" />
-
     <TextView
         android:id="@+id/accountLabel"
         android:layout_width="wrap_content"
@@ -29,16 +19,6 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/nameLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/editText1"
-        android:layout_alignBottom="@+id/editText1"
-        android:layout_alignLeft="@+id/textView3"
-        android:text="Full Name"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,29 +27,6 @@
         android:layout_alignLeft="@+id/textView3"
         android:text="Password"
         android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/welcomeLabel"
-        android:layout_marginTop="12dp"
-        android:ems="10"
-        android:inputType="textPersonName" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_below="@+id/editText1"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:inputType="number" />
 
     <TextView
         android:id="@+id/welcomeLabel"
@@ -102,5 +59,28 @@
         android:height="35dp"
         android:text="Exit"
         android:width="150dp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/welcomeLabel"
+        android:layout_marginTop="38dp"
+        android:ems="10"
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editText2"
+        android:layout_marginTop="41dp"
+        android:ems="10"
+        android:inputType="textPassword" />
 
 </RelativeLayout>

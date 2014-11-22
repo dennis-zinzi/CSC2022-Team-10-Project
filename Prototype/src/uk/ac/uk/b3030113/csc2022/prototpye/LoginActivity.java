@@ -68,7 +68,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 				/*
 				 * Code to move to Main Activity (ProtoApp)
 				 */
-				Intent intent = new Intent(context, ProtoApp.class);
+				Intent intent = new Intent(context, MainMenuActivity.class);
 				startActivity(intent);
 			}
 
@@ -78,14 +78,11 @@ public class LoginActivity extends Activity implements OnClickListener{
 
 			@Override
 			public void onClick(View v) {
-
-				int pid = android.os.Process.myPid();
-				android.os.Process.killProcess(pid);
-				System.exit(1);
-
-				/*Intent intent = new Intent(Intent.ACTION_MAIN);
+				
+				//Exits app 
+				Intent intent = new Intent(Intent.ACTION_MAIN);
 				intent.addCategory(Intent.CATEGORY_HOME);
-				startActivity(intent);*/
+				startActivity(intent);
 			}
 		});
 	}

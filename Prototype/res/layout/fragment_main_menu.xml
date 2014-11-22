@@ -6,8 +6,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="uk.ac.uk.b3030113.csc2022.prototpye.ProtoApp" >
+    tools:context="uk.ac.uk.b3030113.csc2022.prototpye.MainMenuActivity$PlaceholderFragment" >
 
+    
     <TextView
         android:id="@+id/welcomeLabel"
         android:layout_width="wrap_content"
@@ -33,21 +34,10 @@
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/qTransfer"
+        android:layout_alignLeft="@+id/help"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
         android:height="35dp"
         android:text="Logout"
-        android:width="150dp" />
-
-    <Button
-        android:id="@+id/wallets"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/qTransfer"
-        android:layout_below="@+id/qTransfer"
-        android:layout_marginTop="23dp"
-        android:text="Wallets"
         android:width="150dp" />
 
     <Button
@@ -56,18 +46,37 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/qBalance"
         android:layout_below="@+id/qBalance"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="14dp"
         android:text="Quick Transfer"
         android:width="150dp" />
+
+    <Button
+        android:id="@+id/wallets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/qTransfer"
+        android:layout_centerVertical="true"
+        android:text="Wallets"
+        android:width="150dp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/wallets"
+        android:layout_below="@+id/wallets"
+        android:layout_marginTop="18dp"
+        android:text="Further Banking" />
 
     <Button
         android:id="@+id/help"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/wallets"
-        android:layout_below="@+id/wallets"
-        android:layout_marginTop="30dp"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="14dp"
         android:text="Help"
         android:width="150dp" />
 
 </RelativeLayout>
+

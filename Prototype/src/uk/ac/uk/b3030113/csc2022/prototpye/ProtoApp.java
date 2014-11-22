@@ -3,6 +3,7 @@ package uk.ac.uk.b3030113.csc2022.prototpye;
 import android.app.Activity;
 import android.view.*;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 //import android.graphics.Color;
 import android.net.Uri;
@@ -16,10 +17,9 @@ import android.widget.Button;
 public class ProtoApp extends Activity implements OnClickListener {
 	
 	Button balanceButton;
-	Button accountInfoButton;
-	Button contactButton;
-	Button budgetButton;
-	Button topUpButton;
+	Button transferButton;
+	Button walletsButton;
+	Button helpButton;
 	
 	Button logoutButton;
 
@@ -33,12 +33,14 @@ public class ProtoApp extends Activity implements OnClickListener {
 	
 	public void addListenerOnButton() {
 		//Determine button to add listener to
-		balanceButton = (Button) findViewById(R.id.balance);
-		accountInfoButton = (Button)findViewById(R.id.accountInfo);
-		contactButton = (Button)findViewById(R.id.contact);
-		budgetButton = (Button)findViewById(R.id.budget);
-		topUpButton = (Button)findViewById(R.id.topUp);
+		balanceButton = (Button) findViewById(R.id.qBalance);
+		transferButton = (Button)findViewById(R.id.qTransfer);
+		walletsButton = (Button)findViewById(R.id.wallets);
+		helpButton = (Button)findViewById(R.id.help);
 		logoutButton = (Button)findViewById(R.id.logout);
+		
+
+		final Context context = this;
 
 		//Add listener using Anonymous class
 		balanceButton.setOnClickListener(new OnClickListener() {
@@ -52,45 +54,34 @@ public class ProtoApp extends Activity implements OnClickListener {
 
 		});
 		
-		accountInfoButton.setOnClickListener(new OnClickListener() {
+		transferButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				/*
-				 * Move to account screen
+				 * Move to transfers screen
 				 */
 			}
 
 		});
 		
-		contactButton.setOnClickListener(new OnClickListener() {
+		walletsButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				/*
-				 * Move to contact screen
+				 * Move to wallet screen
 				 */
 			}
 
 		});
 		
-		budgetButton.setOnClickListener(new OnClickListener() {
+		helpButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				/*
-				 * Move to budget screen
-				 */
-			}
-
-		});
-		
-		topUpButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				/*
-				 * Move to top up screen
+				 * Move to help/contact screen
 				 */
 			}
 
@@ -102,12 +93,11 @@ public class ProtoApp extends Activity implements OnClickListener {
 			public void onClick(View v) {
 				
 				/*
-				 * Code to logout and move back to login screen
+				 * Code to logout
 				 */
 				
-				/*Intent intent = new Intent(Intent.ACTION_MAIN);
-				intent.addCategory(Intent.CATEGORY_HOME);
-				startActivity(intent);*/
+				Intent intent = new Intent(context, LoginActivity.class);
+				startActivity(intent);
 			}
 
 		});

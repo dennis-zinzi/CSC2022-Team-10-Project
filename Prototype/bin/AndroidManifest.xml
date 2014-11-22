@@ -16,7 +16,6 @@
         <activity
             android:name=".ProtoApp"
             android:label="@string/app_name" >
-            
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -26,6 +25,38 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainMenuActivity"
+            android:label="@string/title_activity_main_menu" >
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:parentActivityName=".MainMenuActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="uk.ac.uk.b3030113.csc2022.prototpye.MainMenuActivity" />
+        </activity>
+        <activity
+            android:name=".BalanceActivity"
+            android:label="@string/title_activity_balance" >
+        </activity>
+        <activity
+            android:name=".BankingActivity"
+            android:label="@string/title_activity_banking" >
+        </activity>
+        <activity
+            android:name=".TransferActivity"
+            android:label="@string/title_activity_transfer" >
+        </activity>
+        <activity
+            android:name=".WalletActivity"
+            android:label="@string/title_activity_wallet" >
+        </activity>
+        <activity
+            android:name=".HelpActivity"
+            android:label="@string/title_activity_help" >
         </activity>
     </application>
 
