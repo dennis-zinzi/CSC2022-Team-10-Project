@@ -19,7 +19,7 @@
         android:width="175dp" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/loginP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button3"
-        android:layout_alignLeft="@+id/button1"
+        android:layout_alignLeft="@+id/loginP"
         android:layout_marginBottom="14dp"
         android:height="30dp"
         android:text="Pay Bills"

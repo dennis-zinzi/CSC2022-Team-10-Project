@@ -58,6 +58,10 @@
             android:name=".HelpActivity"
             android:label="@string/title_activity_help" >
         </activity>
+        <activity
+            android:name=".PasscodeLoginActivity"
+            android:label="@string/title_activity_passcode_login" >
+        </activity>
     </application>
 
 </manifest>

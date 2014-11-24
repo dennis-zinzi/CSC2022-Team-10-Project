@@ -1,7 +1,6 @@
 package uk.ac.uk.b3030113.csc2022.prototpye;
 
 import android.app.Activity;
-import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
@@ -40,7 +39,6 @@ public class MainMenuActivity extends Activity implements
 	 * Used to store the last screen title. For use in
 	 * {@link #restoreActionBar()}.
 	 */
-	private CharSequence mTitle;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -51,14 +49,15 @@ public class MainMenuActivity extends Activity implements
 
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager()
 				.findFragmentById(R.id.navigation_drawer);
-		mTitle = getTitle();
+		
+		this.setTitle("Main Menu");
 
 		// Set up the drawer.
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
 				(DrawerLayout) findViewById(R.id.drawer_layout));
 	}
 	
-	/*public void addListenerOnButton() {
+	public void addListenerOnButton() {
 		//Determine button to add listener to
 		logoutButton = (Button) findViewById(R.id.logout);
 		
@@ -71,14 +70,14 @@ public class MainMenuActivity extends Activity implements
 				
 				/*
 				 * Code to logout
-				 
+				 */
 				
 				Intent intent = new Intent(context, LoginActivity.class);
 				startActivity(intent);
 			}
 
 		});
-	}*/
+	}/**/
 	
 	@Override
 	public void onNavigationDrawerItemSelected(int position) {
@@ -87,50 +86,49 @@ public class MainMenuActivity extends Activity implements
 		fragmentManager
 				.beginTransaction()
 				.replace(R.id.container,
-						PlaceholderFragment.newInstance(position + 1)).commit();
+						PlaceholderFragment.newInstance(position+1)).commit();
 	}
 
 	
 	public void onSectionAttached(int number) {
 		final Context context = this;
 		switch (number) {
+		case 0:
+			break;
 		case 1:
-			mTitle = getString(R.string.title_balance);
+			//mTitle = getString(R.string.title_balance);
 			Intent balance = new Intent(context, BalanceActivity.class);
 			startActivity(balance);
 			break;
 		case 2:
-			mTitle = getString(R.string.title_transfer);
+			//mTitle = getString(R.string.title_transfer);
 			Intent transfer = new Intent(context, TransferActivity.class);
 			startActivity(transfer);
 			break;
 		case 3:
-			mTitle = getString(R.string.title_wallets);
+			//mTitle = getString(R.string.title_wallets);
 			Intent wallet = new Intent(context,WalletActivity.class);
 			startActivity(wallet);
 			break;
 		case 4:
-			mTitle = getString(R.string.title_banking);
+			//mTitle = getString(R.string.title_banking);
 			Intent banking = new Intent(context, BankingActivity.class);
 			startActivity(banking);
 			break;
 		case 5:
-			mTitle = getString(R.string.title_help);
+			//mTitle = getString(R.string.title_help);
 			Intent help = new Intent(context,HelpActivity.class);
 			startActivity(help);
 			break;
 		case 6:
-			mTitle = getString(R.string.title_logout);
+			//mTitle = getString(R.string.title_logout);
+			Intent logout = new Intent(context,LoginActivity.class);
+			startActivity(logout);
 			break;
 		}
 	}
 
-	public void restoreActionBar() {
-		ActionBar actionBar = getActionBar();
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-		actionBar.setDisplayShowTitleEnabled(true);
-		actionBar.setTitle(mTitle);
-	}
+	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -139,7 +137,6 @@ public class MainMenuActivity extends Activity implements
 			// if the drawer is not showing. Otherwise, let the drawer
 			// decide what to show in the action bar.
 			getMenuInflater().inflate(R.menu.main_menu, menu);
-			restoreActionBar();
 			return true;
 		}
 		return super.onCreateOptionsMenu(menu);

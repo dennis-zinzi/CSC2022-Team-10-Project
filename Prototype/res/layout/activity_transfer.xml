@@ -65,7 +65,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/loginP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText2"
@@ -88,7 +88,7 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
+        android:layout_below="@+id/loginP"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
         android:text="Other Banking"
@@ -120,7 +120,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginRight="12dp"
         android:layout_marginTop="46dp"
-        android:layout_toLeftOf="@+id/button1"
+        android:layout_toLeftOf="@+id/loginP"
         android:text="Amount"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="20sp" />

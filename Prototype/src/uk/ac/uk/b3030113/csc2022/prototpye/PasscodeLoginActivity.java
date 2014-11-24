@@ -1,12 +1,8 @@
 package uk.ac.uk.b3030113.csc2022.prototpye;
 
 import android.app.Activity;
-import android.view.*;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
-//import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,26 +10,24 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class LoginActivity extends Activity implements OnClickListener{
-
+public class PasscodeLoginActivity extends Activity implements OnClickListener{
 
 	Button loginButton;
-	Button exitButton;
+	Button backButton;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_login);
-
+		setContentView(R.layout.activity_passcode_login);
+		
 		addListenerOnButton();
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.login, menu);
+		getMenuInflater().inflate(R.menu.passcode_login, menu);
 		return true;
-
 	}
 
 	@Override
@@ -47,13 +41,13 @@ public class LoginActivity extends Activity implements OnClickListener{
 		}
 		return super.onOptionsItemSelected(item);
 	}
-
+	
 	public void addListenerOnButton() {
 		final Context context = this;
 		
 		//Determine button to add listener to
 		loginButton = (Button) findViewById(R.id.login);
-		exitButton = (Button)findViewById(R.id.exit);
+		backButton = (Button)findViewById(R.id.backP);
 
 		//Add listener using Anonymous class
 		loginButton.setOnClickListener(new OnClickListener() {
@@ -66,27 +60,20 @@ public class LoginActivity extends Activity implements OnClickListener{
 				 */
 				
 				/*
-				 * Code to move to Passcode Login
-				 * Intent intent = new Intent(context, PasscodeLoginActivity.class);
-				startActivity(intent);
+				 * Code to move to Main Activity (ProtoApp)
 				 */
-				
-				//Go to menu for now
 				Intent intent = new Intent(context, MainMenuActivity.class);
 				startActivity(intent);
-				
 			}
 
 		});
 
-		exitButton.setOnClickListener(new OnClickListener() {
+		backButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				
-				//Exits app 
-				Intent intent = new Intent(Intent.ACTION_MAIN);
-				intent.addCategory(Intent.CATEGORY_HOME);
+				Intent intent = new Intent(context, LoginActivity.class);
 				startActivity(intent);
 			}
 		});

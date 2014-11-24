@@ -39,16 +39,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
-        android:id="@+id/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/exit"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="18dp"
-        android:text="Login"
-        android:width="150dp" />
-
-    <Button
         android:id="@+id/exit"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
@@ -82,5 +72,15 @@
         android:layout_marginTop="41dp"
         android:ems="10"
         android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/exit"
+        android:layout_alignLeft="@+id/editText3"
+        android:layout_marginBottom="14dp"
+        android:text="Login"
+        android:width="150dp" />
 
 </RelativeLayout>

@@ -9,7 +9,7 @@
     tools:context="uk.ac.uk.b3030113.csc2022.prototpye.HelpActivity" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/loginP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button3"
-        android:layout_below="@+id/button1"
+        android:layout_below="@+id/loginP"
         android:layout_marginTop="39dp"
         android:text="Contact Us"
         android:width="200dp" />

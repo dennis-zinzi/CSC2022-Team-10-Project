@@ -60,7 +60,7 @@
         android:width="150dp" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/loginP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/wallets"
@@ -72,8 +72,8 @@
         android:id="@+id/help"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_below="@+id/button1"
+        android:layout_alignLeft="@+id/loginP"
+        android:layout_below="@+id/loginP"
         android:layout_marginTop="14dp"
         android:text="Help"
         android:width="150dp" />
