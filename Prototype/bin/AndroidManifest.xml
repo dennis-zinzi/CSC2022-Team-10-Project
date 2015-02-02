@@ -63,7 +63,7 @@
             android:label="@string/title_activity_passcode_login" >
         </activity>
         <activity
-            android:name=".NavigationActivity"
+            android:name=".MainActivity"
             android:label="@string/title_activity_navigation" >
         </activity>
         <activity

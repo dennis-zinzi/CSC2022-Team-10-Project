@@ -62,7 +62,7 @@ public class PasscodeLoginActivity extends Activity implements OnClickListener{
 				/*
 				 * Code to move to Main Activity (ProtoApp)
 				 */
-				Intent intent = new Intent(context, NavigationActivity.class);
+				Intent intent = new Intent(context, MainActivity.class);
 				startActivity(intent);
 			}
 

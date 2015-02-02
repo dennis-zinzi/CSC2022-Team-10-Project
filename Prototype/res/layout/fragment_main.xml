@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/lloyds_green"
+    tools:context="uk.ac.uk.b3030113.csc2022.prototpye.MainMenuActivity$PlaceholderFragment" >
+
+    
+    <TextView
+        android:id="@+id/welcomeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="Choose your Action"
+        android:textColor="#FFFFFF"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/qBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcomeLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Quick Balance"
+        android:width="150dp" />
+
+    <Button
+        android:id="@+id/loginP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/wallets"
+        android:layout_below="@+id/wallets"
+        android:layout_marginTop="16dp"
+        android:text="Further Banking" />
+
+    <Button
+        android:id="@+id/help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/loginP"
+        android:layout_below="@+id/loginP"
+        android:layout_marginTop="16dp"
+        android:text="Help"
+        android:width="150dp" />
+
+    <Button
+        android:id="@+id/logout"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/help"
+        android:layout_below="@+id/help"
+        android:layout_marginTop="16dp"
+        android:height="35dp"
+        android:text="Logout"
+        android:width="150dp" />
+
+    <Button
+        android:id="@+id/wallets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/qTransfer"
+        android:layout_centerVertical="true"
+        android:text="Wallets"
+        android:width="150dp" />
+
+    <Button
+        android:id="@+id/qTransfer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/qBalance"
+        android:layout_below="@+id/qBalance"
+        android:layout_marginTop="14dp"
+        android:text="Quick Transfer"
+        android:width="150dp" />
+
+</RelativeLayout>
+
