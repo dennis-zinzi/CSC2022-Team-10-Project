@@ -18,58 +18,35 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login" >
+            android:name=".LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainMenuActivity"
-            android:label="@string/title_activity_main_menu" >
-        </activity>
+        
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main"
-            android:parentActivityName=".MainMenuActivity" >
+            android:label="@string/title_activity_main" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="uk.ac.uk.b3030113.csc2022.prototpye.MainMenuActivity" />
+                android:value="uk.ac.uk.b3030113.csc2022.prototpye.MainActivity" />
         </activity>
+        
         <activity
-            android:name=".BalanceActivity"
-            android:label="@string/title_activity_balance" >
-        </activity>
-        <activity
-            android:name=".BankingActivity"
+            android:name=".BankingFragment"
             android:label="@string/title_activity_banking" >
         </activity>
         <activity
-            android:name=".TransferActivity"
-            android:label="@string/title_activity_transfer" >
-        </activity>
-        <activity
-            android:name=".WalletActivity"
-            android:label="@string/title_activity_wallet" >
-        </activity>
-        <activity
-            android:name=".HelpActivity"
+            android:name=".HelpFragment"
             android:label="@string/title_activity_help" >
         </activity>
         <activity
             android:name=".PasscodeLoginActivity"
             android:label="@string/title_activity_passcode_login" >
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_navigation" >
-        </activity>
-        <activity
-            android:name=".BaseActivity"
-            android:label="@string/title_activity_base" >
-        </activity>
+
     </application>
 
 </manifest>

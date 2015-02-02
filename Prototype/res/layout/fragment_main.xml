@@ -32,7 +32,7 @@
         android:width="150dp" />
 
     <Button
-        android:id="@+id/loginP"
+        android:id="@+id/fBanking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/wallets"
@@ -44,8 +44,8 @@
         android:id="@+id/help"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/loginP"
-        android:layout_below="@+id/loginP"
+        android:layout_alignRight="@+id/fBanking"
+        android:layout_below="@+id/fBanking"
         android:layout_marginTop="16dp"
         android:text="Help"
         android:width="150dp" />
