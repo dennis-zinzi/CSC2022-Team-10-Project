@@ -1,18 +1,25 @@
 package uk.ac.uk.b3030113.csc2022.prototpye;
 
 import android.app.Activity;
+import android.graphics.Color;
+import android.graphics.LightingColorFilter;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class HelpActivity extends Activity {
 
+	Button b;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_help);
 		
 		this.setTitle("Help");
+		
+		b = (Button) findViewById(R.id.loginP);
 	}
 
 	@Override

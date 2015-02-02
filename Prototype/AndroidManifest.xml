@@ -62,6 +62,14 @@
             android:name=".PasscodeLoginActivity"
             android:label="@string/title_activity_passcode_login" >
         </activity>
+        <activity
+            android:name=".NavigationActivity"
+            android:label="@string/title_activity_navigation" >
+        </activity>
+        <activity
+            android:name=".BaseActivity"
+            android:label="@string/title_activity_base" >
+        </activity>
     </application>
 
 </manifest>

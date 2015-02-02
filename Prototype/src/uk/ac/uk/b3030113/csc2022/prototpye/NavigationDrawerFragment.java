@@ -19,7 +19,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+//import android.widget.Toast;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation
@@ -49,6 +49,7 @@ public class NavigationDrawerFragment extends Fragment {
 	/**
 	 * Helper component that ties the action bar to the navigation drawer.
 	 */
+	@SuppressWarnings("deprecation")
 	private ActionBarDrawerToggle mDrawerToggle;
 
 	private DrawerLayout mDrawerLayout;
@@ -108,6 +109,7 @@ public class NavigationDrawerFragment extends Fragment {
 				.getThemedContext(),
 				android.R.layout.simple_list_item_activated_1,
 				android.R.id.text1, new String[] {
+						getString(R.string.title_main),
 						getString(R.string.title_balance),
 						getString(R.string.title_transfer),
 						getString(R.string.title_wallets),

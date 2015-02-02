@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class BankingActivity extends Activity {
+public class BankingActivity extends Activity implements NavigationDrawerFragment.NavigationDrawerCallbacks{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,5 +31,11 @@ public class BankingActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onNavigationDrawerItemSelected(int position) {
+		// TODO Auto-generated method stub
+		
 	}
 }

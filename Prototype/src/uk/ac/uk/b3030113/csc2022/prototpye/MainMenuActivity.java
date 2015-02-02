@@ -1,5 +1,6 @@
 package uk.ac.uk.b3030113.csc2022.prototpye;
 
+
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -19,127 +20,23 @@ import android.view.*;
 import android.app.AlertDialog;
 import android.content.Intent;
 //import android.graphics.Color;
-import android.net.Uri;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 
-public class MainMenuActivity extends Activity implements
-		NavigationDrawerFragment.NavigationDrawerCallbacks, OnClickListener {
-
-	Button logoutButton;
-
+public class MainMenuActivity extends Activity{
 	
-	/**
-	 * Fragment managing the behaviors, interactions and presentation of the
-	 * navigation drawer.
-	 */
-	private NavigationDrawerFragment mNavigationDrawerFragment;
-
-	/**
-	 * Used to store the last screen title. For use in
-	 * {@link #restoreActionBar()}.
-	 */
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_menu);
-		
-		//addListenerOnButton();
-
-		mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager()
-				.findFragmentById(R.id.navigation_drawer);
-		
-		this.setTitle("Main Menu");
-
-		// Set up the drawer.
-		mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
-				(DrawerLayout) findViewById(R.id.drawer_layout));
 	}
-	
-	public void addListenerOnButton() {
-		//Determine button to add listener to
-		logoutButton = (Button) findViewById(R.id.logout);
-		
-		final Context context = this;
-		
-		logoutButton.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				
-				/*
-				 * Code to logout
-				 */
-				
-				Intent intent = new Intent(context, LoginActivity.class);
-				startActivity(intent);
-			}
-
-		});
-	}/**/
-	
-	@Override
-	public void onNavigationDrawerItemSelected(int position) {
-		// update the main content by replacing fragments
-		FragmentManager fragmentManager = getFragmentManager();
-		fragmentManager
-				.beginTransaction()
-				.replace(R.id.container,
-						PlaceholderFragment.newInstance(position+1)).commit();
-	}
-
-	
-	public void onSectionAttached(int number) {
-		final Context context = this;
-		switch (number) {
-		case 0:
-			break;
-		case 1:
-			//mTitle = getString(R.string.title_balance);
-			Intent balance = new Intent(context, BalanceActivity.class);
-			startActivity(balance);
-			break;
-		case 2:
-			//mTitle = getString(R.string.title_transfer);
-			Intent transfer = new Intent(context, TransferActivity.class);
-			startActivity(transfer);
-			break;
-		case 3:
-			//mTitle = getString(R.string.title_wallets);
-			Intent wallet = new Intent(context,WalletActivity.class);
-			startActivity(wallet);
-			break;
-		case 4:
-			//mTitle = getString(R.string.title_banking);
-			Intent banking = new Intent(context, BankingActivity.class);
-			startActivity(banking);
-			break;
-		case 5:
-			//mTitle = getString(R.string.title_help);
-			Intent help = new Intent(context,HelpActivity.class);
-			startActivity(help);
-			break;
-		case 6:
-			//mTitle = getString(R.string.title_logout);
-			Intent logout = new Intent(context,LoginActivity.class);
-			startActivity(logout);
-			break;
-		}
-	}
-
 	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		if (!mNavigationDrawerFragment.isDrawerOpen()) {
-			// Only show items in the action bar relevant to this screen
-			// if the drawer is not showing. Otherwise, let the drawer
-			// decide what to show in the action bar.
-			getMenuInflater().inflate(R.menu.main_menu, menu);
-			return true;
-		}
-		return super.onCreateOptionsMenu(menu);
+		super.onCreateOptionsMenu(menu);
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main_menu, menu);
+		return true;
 	}
 
 	@Override
@@ -154,50 +51,4 @@ public class MainMenuActivity extends Activity implements
 		return super.onOptionsItemSelected(item);
 	}
 	
-	@Override
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	/**
-	 * A placeholder fragment containing a simple view.
-	 */
-	public static class PlaceholderFragment extends Fragment {
-		/**
-		 * The fragment argument representing the section number for this
-		 * fragment.
-		 */
-		private static final String ARG_SECTION_NUMBER = "section_number";
-
-		/**
-		 * Returns a new instance of this fragment for the given section number.
-		 */
-		public static PlaceholderFragment newInstance(int sectionNumber) {
-			PlaceholderFragment fragment = new PlaceholderFragment();
-			Bundle args = new Bundle();
-			args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-			fragment.setArguments(args);
-			return fragment;
-		}
-
-		public PlaceholderFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_main_menu,
-					container, false);
-			return rootView;
-		}
-
-		@Override
-		public void onAttach(Activity activity) {
-			super.onAttach(activity);
-			((MainMenuActivity) activity).onSectionAttached(getArguments()
-					.getInt(ARG_SECTION_NUMBER));
-		}
-	}
-
 }

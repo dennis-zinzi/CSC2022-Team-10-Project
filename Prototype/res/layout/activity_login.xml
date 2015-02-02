@@ -38,6 +38,17 @@
         android:text="Welcome"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editText2"
+        android:layout_marginTop="41dp"
+        android:ems="10"
+        android:inputType="textPassword" />
+
     <Button
         android:id="@+id/exit"
         style="?android:attr/buttonStyleSmall"
@@ -45,9 +56,19 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/login"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="27dp"
         android:height="35dp"
         android:text="Exit"
+        android:width="150dp" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/exit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="Login"
         android:width="150dp" />
 
     <EditText
@@ -56,31 +77,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/welcomeLabel"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="39dp"
+        android:layout_toRightOf="@+id/welcomeLabel"
         android:ems="10"
-        android:inputType="number" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/editText2"
-        android:layout_marginTop="41dp"
-        android:ems="10"
-        android:inputType="textPassword" />
-
-    <Button
-        android:id="@+id/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/exit"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_marginBottom="14dp"
-        android:text="Login"
-        android:width="150dp" />
+        android:inputType="number" />
 
 </RelativeLayout>

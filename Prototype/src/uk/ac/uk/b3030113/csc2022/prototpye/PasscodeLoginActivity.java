@@ -46,7 +46,7 @@ public class PasscodeLoginActivity extends Activity implements OnClickListener{
 		final Context context = this;
 		
 		//Determine button to add listener to
-		loginButton = (Button) findViewById(R.id.login);
+		loginButton = (Button) findViewById(R.id.loginP);
 		backButton = (Button)findViewById(R.id.backP);
 
 		//Add listener using Anonymous class
@@ -62,7 +62,7 @@ public class PasscodeLoginActivity extends Activity implements OnClickListener{
 				/*
 				 * Code to move to Main Activity (ProtoApp)
 				 */
-				Intent intent = new Intent(context, MainMenuActivity.class);
+				Intent intent = new Intent(context, NavigationActivity.class);
 				startActivity(intent);
 			}
 

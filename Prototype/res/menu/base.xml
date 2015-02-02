@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="uk.ac.uk.b3030113.csc2022.prototpye.MainMenuActivity" >
+    tools:context="uk.ac.uk.b3030113.csc2022.prototpye.BaseActivity" >
 
     <item
         android:id="@+id/action_settings"
