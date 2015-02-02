@@ -72,8 +72,8 @@ public class LoginActivity extends Activity implements OnClickListener{
 				 */
 				
 				//Go to menu for now
-				//Intent intent = new Intent(context, NavigationActivity.class);
-				Intent intent = new Intent(context, MainMenuActivity.class);
+				Intent intent = new Intent(context, NavigationActivity.class);
+//				Intent intent = new Intent(context, MainMenuActivity.class);
 				
 				startActivity(intent);
 				
