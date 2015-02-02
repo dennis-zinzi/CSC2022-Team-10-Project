@@ -17,15 +17,9 @@
             android:name=".ProtoApp"
             android:label="@string/app_name" >
         </activity>
-        <activity
-            android:name=".LoginActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".LoginActivity" >
+            
         </activity>
-        
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main" >
@@ -33,7 +27,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="uk.ac.uk.b3030113.csc2022.prototpye.MainActivity" />
         </activity>
-        
         <activity
             android:name=".BankingFragment"
             android:label="@string/title_activity_banking" >
@@ -46,7 +39,17 @@
             android:name=".PasscodeLoginActivity"
             android:label="@string/title_activity_passcode_login" >
         </activity>
+        <activity
+            android:name=".LoadingActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
