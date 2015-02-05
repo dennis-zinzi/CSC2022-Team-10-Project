@@ -18,23 +18,25 @@ public class LoadingActivity extends Activity {
 		setContentView(R.layout.activity_loading);
 		
 		final Context context = this;
+		/*
+        	 * Showing splash screen with a timer
+        	 */
 		new Handler().postDelayed(new Runnable() {
+			
+			//Amount of time splash screen will be shown
+			private final static int SHOW_TIME = 3000;
 			 
-            /*
-             * Showing splash screen with a timer. This will be useful when you
-             * want to show case your app logo / company
-             */
+        		@Override
+            		public void run() {
+                		// This method will be executed once the timer is over
+                		// Starts Login screen activity
+                		Intent i = new Intent(context, LoginActivity.class);
+                		startActivity(i);
  
-            @Override
-            public void run() {
-                // This method will be executed once the timer is over
-                Intent i = new Intent(context, LoginActivity.class);
-                startActivity(i);
- 
-                // close this activity
-                finish();
-            }
-        }, 3000);
+                		// close this activity
+                		finish();
+            		}
+        	}, SHOW_TIME);
 	}
 
 	@Override
