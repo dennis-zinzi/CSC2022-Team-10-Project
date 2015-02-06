@@ -1,7 +1,5 @@
 package uk.ac.uk.b3030113.csc2022.prototpye;
 
-import java.util.Timer;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -16,27 +14,29 @@ public class LoadingActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_loading);
-		
+
 		final Context context = this;
+
+		//Amount of time splash screen will be shown
+		final int SHOW_TIME = 3000;
+
 		/*
-        	 * Showing splash screen with a timer
-        	 */
+		 * Showing splash screen with a timer
+		 */
 		new Handler().postDelayed(new Runnable() {
-			
-			//Amount of time splash screen will be shown
-			private final static int SHOW_TIME = 3000;
-			 
-        		@Override
-            		public void run() {
-                		// This method will be executed once the timer is over
-                		// Starts Login screen activity
-                		Intent i = new Intent(context, LoginActivity.class);
-                		startActivity(i);
- 
-                		// close this activity
-                		finish();
-            		}
-        	}, SHOW_TIME);
+
+
+			@Override
+			public void run() {
+				// This method will be executed once the timer is over
+				// Starts Login screen activity
+				Intent i = new Intent(context, LoginActivity.class);
+				startActivity(i);
+
+				// close this activity
+				finish();
+			}
+		}, SHOW_TIME);
 	}
 
 	@Override
