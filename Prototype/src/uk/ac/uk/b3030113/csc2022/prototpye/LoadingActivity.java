@@ -17,11 +17,11 @@ public class LoadingActivity extends Activity {
 
 		final Context context = this;
 
-		//Amount of time splash screen will be shown
+		//Amount of time loading screen will be shown
 		final int SHOW_TIME = 3000;
 
 		/*
-		 * Showing splash screen with a timer
+		 * Showing loading screen with a timer
 		 */
 		new Handler().postDelayed(new Runnable() {
 
