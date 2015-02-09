@@ -1,19 +1,9 @@
 package uk.ac.uk.b3030113.csc2022.prototpye;
 
-import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.content.Context;
 //import android.os.Build;
 import android.os.Bundle;
-//import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.support.v4.widget.DrawerLayout;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
@@ -33,8 +23,8 @@ NavigationDrawerFragment.NavigationDrawerCallbacks{
 	 * Used to store the last screen title. For use in
 	 * {@link #restoreActionBar()}.
 	 */
-	
-	
+
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

@@ -1,6 +1,7 @@
 package uk.ac.uk.b3030113.csc2022.prototpye;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -46,6 +47,53 @@ public class MainMenuFragment extends Fragment implements OnClickListener{
 		help = (Button) rootView.findViewById(R.id.help);
 		logout = (Button) rootView.findViewById(R.id.logout);
 
+		final android.support.v4.app.FragmentManager fragmentManager = getFragmentManager();
+		
+		qBalance.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v){
+				fragmentManager.beginTransaction().replace(R.id.container, BalanceFragment.newInstance(2)).commit();
+			}
+
+		});
+		
+		qTransfer.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v){
+				fragmentManager.beginTransaction().replace(R.id.container, TransferFragment.newInstance(3)).commit();
+			}
+
+		});
+		
+		wallets.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v){
+				fragmentManager.beginTransaction().replace(R.id.container, WalletFragment.newInstance(4)).commit();
+			}
+
+		});
+		
+		fBanking.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v){
+				fragmentManager.beginTransaction().replace(R.id.container, BankingFragment.newInstance(5)).commit();
+			}
+
+		});
+		
+		help.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v){
+				fragmentManager.beginTransaction().replace(R.id.container, HelpFragment.newInstance(6)).commit();
+			}
+
+		});
+				
 		logout.setOnClickListener(new OnClickListener(){
 
 			@Override
