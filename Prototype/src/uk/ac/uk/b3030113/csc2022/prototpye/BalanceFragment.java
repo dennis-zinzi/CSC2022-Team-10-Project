@@ -6,10 +6,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 //import android.widget.TextView;
  
 public class BalanceFragment extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
+    
+    private TextView balanceLabel;
  
     public static BalanceFragment newInstance(int sectionNumber) {
         BalanceFragment fragment = new BalanceFragment();
@@ -27,7 +30,13 @@ public class BalanceFragment extends Fragment {
             Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_balance, container,
                 false);
- 
+        
+        balanceLabel = (TextView)rootView.findViewById(R.id.balanceText);
+        
+        
+//        Account acc = users account; 
+//        balanceLabel.setText(getBalance());
+        
         return rootView;
     }
     @Override

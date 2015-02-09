@@ -34,6 +34,7 @@ NavigationDrawerFragment.NavigationDrawerCallbacks{
 		mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager()
 				.findFragmentById(R.id.navigation_drawer);
 
+		setTitle("LLoyds Student");
 
 		// Set up the drawer.
 		mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
