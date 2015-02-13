@@ -10,6 +10,7 @@ public class User {
 	private String address;
 	private String password;
 	private List<Account> accounts;
+	private List<Budget> budgets;
 	
 	public String getName() {
 		return name;
@@ -42,6 +43,10 @@ public class User {
 	
 	public List<Account> getAccounts() {
 		return accounts;
+	}
+	
+	public List<Budget> getBudgets(){
+		return budgets;
 	}
 	
 	

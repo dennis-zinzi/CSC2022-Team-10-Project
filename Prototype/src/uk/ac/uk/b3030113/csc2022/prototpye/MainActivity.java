@@ -11,7 +11,7 @@ import android.support.v4.app.FragmentActivity;
 //import android.net.Uri;
 
 public  class MainActivity extends FragmentActivity implements
-NavigationDrawerFragment.NavigationDrawerCallbacks{
+NavigationDrawerFragment.NavigationDrawerCallbacks{/*, ActionBar.TabListener{*/
 
 	/**
 	 * Fragment managing the behaviors, interactions and presentation of the

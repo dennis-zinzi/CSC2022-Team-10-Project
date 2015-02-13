@@ -113,16 +113,6 @@
         android:text="Add Transaction" />
 
     <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView8"
-        android:layout_alignBottom="@+id/textView8"
-        android:layout_alignLeft="@+id/balanceText"
-        android:text="£1000.00"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -133,23 +123,50 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
+        android:id="@+id/balanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView8"
+        android:layout_alignRight="@+id/TextView02"
+        android:text="0.00"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView8"
+        android:layout_alignBottom="@+id/textView8"
+        android:layout_alignRight="@+id/balanceText"
+        android:text="£1000.00"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/progressBar1"
         android:layout_below="@+id/textView2"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/textView4"
         android:text="£"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="50sp" />
 
     <TextView
-        android:id="@+id/balanceText"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/TextView02"
-        android:layout_below="@+id/textView2"
-        android:text="0.00"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="50sp" />
+        android:layout_alignBottom="@+id/TextView02"
+        android:layout_toRightOf="@+id/textView4"
+        android:text="£0" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignTop="@+id/progressBar2"
+        android:text="£0" />
 
 </RelativeLayout>
