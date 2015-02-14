@@ -1,6 +1,6 @@
 package uk.ac.uk.b3030113.csc2022.prototpye;
 
-import java.util.List;
+import java.util.*;
 
 public class User {
 	
@@ -11,6 +11,10 @@ public class User {
 	private String password;
 	private List<Account> accounts;
 	private List<Budget> budgets;
+	
+	public User(String name, int userID){
+		budgets = new ArrayList<Budget>();
+	}
 	
 	public void addBudget(Budget b){
 		budgets.add(b);
@@ -51,7 +55,6 @@ public class User {
 	
 	public List<Budget> getBudgets(){
 		return budgets;
-	}
-	
+	}	
 	
 }

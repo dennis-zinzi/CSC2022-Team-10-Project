@@ -3,12 +3,12 @@ package uk.ac.uk.b3030113.csc2022.prototpye;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+//import android.support.v4.app.Fragment;
+//import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
+//import android.view.View;
+//import android.view.ViewGroup;
 //import android.widget.TextView;
 
 public class HelpActivity extends Activity {

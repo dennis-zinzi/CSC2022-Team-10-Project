@@ -10,7 +10,7 @@
     tools:context="uk.ac.uk.b3030113.csc2022.prototpye.BalanceActivity" >
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/balanceLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -19,85 +19,13 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/TextView02"
+        android:id="@+id/maxL1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/progressBar1"
         android:text="£MAX"
         android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/TextView02"
-        android:layout_below="@+id/TextView02"
-        android:layout_marginTop="24dp"
-        android:text="£MAX"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <ProgressBar
-        android:id="@+id/progressBar1"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/loginP"
-        android:layout_marginBottom="78dp"
-        android:layout_marginRight="24dp"
-        android:layout_toLeftOf="@+id/TextView02"
-        android:minWidth="125dp" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView5"
-        android:layout_alignLeft="@+id/textView5"
-        android:layout_marginBottom="27dp"
-        android:text="Budgets:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <Button
-        android:id="@+id/loginP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:minHeight="25dp"
-        android:text="Add Transaction" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="19dp"
-        android:text="Overdraft:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/balanceText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView8"
-        android:layout_alignRight="@+id/TextView02"
-        android:text="0.00"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="50sp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_marginLeft="16dp"
-        android:layout_toRightOf="@+id/textView4"
-        android:text="£"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="50sp" />
 
     <TextView
         android:id="@+id/textView11"
@@ -118,16 +46,6 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView8"
-        android:layout_alignBottom="@+id/textView8"
-        android:layout_alignRight="@+id/loginP"
-        android:text="@string/pound_symbol"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -137,11 +55,22 @@
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_below="@+id/textView8"
+        android:layout_marginTop="34dp"
+        android:text="Budgets:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView1"
         android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/textView4"
+        android:layout_marginTop="20dp"
         android:text="Personal"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -149,17 +78,96 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView7"
+        android:layout_below="@+id/textView5"
         android:layout_toLeftOf="@+id/textView8"
         android:text="£0" />
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_toLeftOf="@+id/overdraftText"
+        android:minWidth="125dp" />
+
+    <Button
+        android:id="@+id/budgetManage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="15dp"
+        android:text="Manage Budgets" />
+
+    <Button
+        android:id="@+id/addToBudget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/budgetManage"
+        android:layout_alignLeft="@+id/budgetManage"
+        android:layout_alignRight="@+id/budgetManage"
+        android:text="Add To Budget" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView8"
+        android:layout_alignBottom="@+id/textView8"
+        android:layout_toLeftOf="@+id/overdraftText"
+        android:text="@string/pound_symbol"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <ProgressBar
         android:id="@+id/progressBar2"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView7"
         android:layout_alignLeft="@+id/progressBar1"
-        android:layout_alignRight="@+id/progressBar1" />
+        android:layout_alignRight="@+id/progressBar1"
+        android:layout_below="@+id/maxL1"
+        android:layout_marginTop="37dp" />
+
+    <TextView
+        android:id="@+id/maxL2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/progressBar2"
+        android:layout_alignLeft="@+id/maxL1"
+        android:text="£MAX"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/balanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignRight="@+id/maxL1"
+        android:text="0.00"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/balanceLabel"
+        android:layout_marginTop="20dp"
+        android:text="@string/pound_symbol"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/balanceText"
+        android:layout_toLeftOf="@+id/balanceText"
+        android:text="Overdraft:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

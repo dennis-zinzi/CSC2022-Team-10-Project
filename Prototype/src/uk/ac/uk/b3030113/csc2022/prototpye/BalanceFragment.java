@@ -1,11 +1,11 @@
 package uk.ac.uk.b3030113.csc2022.prototpye;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 //import android.widget.TextView;
 
@@ -14,7 +14,10 @@ public class BalanceFragment extends Fragment {
 
 	private TextView balanceLabel;
 	private TextView overdraftLabel;
+	private Button addToBudget;
+	private Button manageBudgets;
 	Account a;
+	User u;
 	
 	public static BalanceFragment newInstance(int sectionNumber) {
 		BalanceFragment fragment = new BalanceFragment();
@@ -25,6 +28,9 @@ public class BalanceFragment extends Fragment {
 	}
 	public BalanceFragment() {
 		a = new Account(25,1096.67,2500.00);
+		u = new User("DZ",30);
+		u.addBudget(new Budget("Personal",100));
+		u.addBudget(new Budget("Groceries",200));
 	}
 
 	@Override
@@ -36,10 +42,15 @@ public class BalanceFragment extends Fragment {
 
 		balanceLabel = (TextView)rootView.findViewById(R.id.balanceText);
 		overdraftLabel = (TextView)rootView.findViewById(R.id.overdraftText);
+		addToBudget = (Button)rootView.findViewById(R.id.addToBudget);
+		manageBudgets = (Button)rootView.findViewById(R.id.budgetManage);
 
-		//balanceLabel.setText(10000.56+"");
 		balanceLabel.setText(a.getBalance()+"");
 		overdraftLabel.setText(a.getOverdraftLimit()+"");
+		
+		//addToBudget -> ask which to add to, then make appropriate change on progress bar;
+		
+		//manageBudgets -> Budget manager screen (New Budget, Modify Budget, Delete Budget, Remove from Budget);
 
 
 
