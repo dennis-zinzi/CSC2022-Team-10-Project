@@ -12,7 +12,10 @@ public class User {
 	private List<Account> accounts;
 	private List<Budget> budgets;
 	
+	
 	public User(String name, int userID){
+		this.name = name;
+		this.userID = userID;
 		budgets = new ArrayList<Budget>();
 	}
 	

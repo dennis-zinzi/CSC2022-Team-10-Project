@@ -48,9 +48,9 @@ public class BalanceFragment extends Fragment {
 		balanceLabel.setText(a.getBalance()+"");
 		overdraftLabel.setText(a.getOverdraftLimit()+"");
 		
-		//addToBudget -> ask which to add to, then make appropriate change on progress bar;
+		//addToBudget -> ask which to add to, then make appropriate change on progress bar
 		
-		//manageBudgets -> Budget manager screen (New Budget, Modify Budget, Delete Budget, Remove from Budget);
+		//manageBudgets -> Budget manager screen (New Budget, Modify Budget, Delete Budget, Remove from Budget)
 
 
 
