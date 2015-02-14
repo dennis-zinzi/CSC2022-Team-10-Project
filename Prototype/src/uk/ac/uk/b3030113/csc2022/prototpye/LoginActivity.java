@@ -5,6 +5,7 @@ import android.app.Activity;
 //import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 //import android.graphics.Color;
 //import android.net.Uri;
 import android.os.Bundle;
@@ -23,6 +24,7 @@ public class LoginActivity extends Activity implements OnClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		setContentView(R.layout.activity_login);
 
 		addListenerOnButton();

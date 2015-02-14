@@ -86,8 +86,7 @@ public  class MainActivity extends FragmentActivity implements ActionBar.TabList
 			return true;
 		}
 		else if(id == R.id.action_help){
-			MainNavActivity.setState(5);
-			Intent i = new Intent(this, MainNavActivity.class);
+			Intent i = new Intent(this, HelpActivity.class);
 			startActivity(i);
 			return true;
 		}

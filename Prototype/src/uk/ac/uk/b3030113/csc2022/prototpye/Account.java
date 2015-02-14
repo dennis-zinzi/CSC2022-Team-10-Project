@@ -8,6 +8,13 @@ public class Account {
 	private double overdraftLimit;
 	List<Transaction> transactionList;
 	
+	public Account(int accountID,double balance,double overdraftLimit){
+		this.accountID = accountID;
+		this.balance = balance;
+		this.overdraftLimit = overdraftLimit;
+		transactionList = new ArrayList<Transaction>();
+	}
+	
 	public void addBalance(double moneyIn){
 		balance += moneyIn;
 	}

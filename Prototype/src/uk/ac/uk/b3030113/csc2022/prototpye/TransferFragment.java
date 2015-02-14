@@ -7,9 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 //import android.widget.TextView;
+import android.widget.TextView;
  
 public class TransferFragment extends Fragment {
     private static final String ARG_SECTION_NUMBER = "section_number";
+ 
+    private TextView balanceLabel;
+    private Account acc;
  
     public static TransferFragment newInstance(int sectionNumber) {
         TransferFragment fragment = new TransferFragment();
@@ -19,7 +23,7 @@ public class TransferFragment extends Fragment {
         return fragment;
     }
     public TransferFragment() {
- 
+    	acc = new Account(25,1096.67,2500.00);
     }
  
     @Override
@@ -28,6 +32,9 @@ public class TransferFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_transfer, container,
                 false);
  
+        balanceLabel = (TextView)rootView.findViewById(R.id.availBalance);
+        balanceLabel.setText(acc.getBalance()+"");
+        
         return rootView;
     }
 //    @Override

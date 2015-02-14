@@ -89,7 +89,7 @@ public class MainMenuFragment extends Fragment implements OnClickListener{
 
 			@Override
 			public void onClick(View v){
-				fragmentManager.beginTransaction().replace(R.id.container, HelpFragment.newInstance(6)).commit();
+				//fragmentManager.beginTransaction().replace(R.id.container, HelpActivity.newInstance(6)).commit();
 			}
 
 		});

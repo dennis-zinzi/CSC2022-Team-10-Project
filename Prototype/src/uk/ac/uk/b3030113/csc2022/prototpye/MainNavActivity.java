@@ -75,7 +75,7 @@ public class MainNavActivity extends FragmentActivity implements NavigationDrawe
 				fragmentManager.beginTransaction().replace(R.id.container, BankingFragment.newInstance(position+1)).commit();
 				break;
 			case 5:
-				fragmentManager.beginTransaction().replace(R.id.container, HelpFragment.newInstance(position+1)).commit();
+				//fragmentManager.beginTransaction().replace(R.id.container, HelpActivity.newInstance(position+1)).commit();
 				state = 0;
 				break;
 			case 6:
