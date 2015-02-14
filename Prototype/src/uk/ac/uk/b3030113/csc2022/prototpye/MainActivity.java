@@ -4,95 +4,76 @@ package uk.ac.uk.b3030113.csc2022.prototpye;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.app.ActionBar;
+import android.app.ActionBar.Tab;
+import android.app.FragmentTransaction;
 //import android.graphics.Color;
 //import android.net.Uri;
 
-public  class MainActivity extends FragmentActivity implements
-NavigationDrawerFragment.NavigationDrawerCallbacks{/*, ActionBar.TabListener{*/
+public  class MainActivity extends FragmentActivity implements ActionBar.TabListener{
 
-	/**
-	 * Fragment managing the behaviors, interactions and presentation of the
-	 * navigation drawer.
-	 */
-	private NavigationDrawerFragment mNavigationDrawerFragment;
-
-	/**
-	 * Used to store the last screen title. For use in
-	 * {@link #restoreActionBar()}.
-	 */
+	private ViewPager viewPager;
+	private TabbedPageAdapter mAdapter;
+	private ActionBar actionBar;
+	//Tab names
+	private String[] tabNames = {"Balance","Transfer","Wallets","Banking"};
 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		setContentView(R.layout.activity_main);
-
-
-		mNavigationDrawerFragment = (NavigationDrawerFragment) getFragmentManager()
-				.findFragmentById(R.id.navigation_drawer);
 
 		setTitle("LLoyds Student");
 
-		// Set up the drawer.
-		mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
-				(DrawerLayout) findViewById(R.id.drawer_layout));
-	}
+		viewPager = (ViewPager) findViewById(R.id.pager);
+		actionBar = getActionBar();
+		mAdapter = new TabbedPageAdapter(getSupportFragmentManager());
 
+		viewPager.setAdapter(mAdapter);
+		actionBar.setHomeButtonEnabled(false);
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);        
 
-
-
-
-	@Override
-	public void onNavigationDrawerItemSelected(int position) {
-		// update the main content by replacing fragments
-		android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
-		switch (position+1) {
-			case 1:
-				fragmentManager.beginTransaction().replace(R.id.container, MainMenuFragment.newInstance(position+1)).commit();
-				break;
-			case 2:
-				fragmentManager.beginTransaction().replace(R.id.container, BalanceFragment.newInstance(position+1)).commit();
-				break;
-			case 3:
-				fragmentManager.beginTransaction().replace(R.id.container, TransferFragment.newInstance(position+1)).commit();
-				break;
-			case 4:
-				fragmentManager.beginTransaction().replace(R.id.container, WalletFragment.newInstance(position+1)).commit();
-				break;
-			case 5:
-				fragmentManager.beginTransaction().replace(R.id.container, BankingFragment.newInstance(position+1)).commit();
-				break;
-			case 6:
-				fragmentManager.beginTransaction().replace(R.id.container, HelpFragment.newInstance(position+1)).commit();
-				break;
-			case 7:
-				Intent logout = new Intent(this,LoginActivity.class);
-				startActivity(logout);
-				break;
+		// Adding Tabs
+		for (String tabName : tabNames) {
+			actionBar.addTab(actionBar.newTab().setText(tabName).setTabListener(this));
 		}
+
+		/**
+		 * on swiping the viewpager make respective tab selected
+		 * */
+		viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+			@Override
+			public void onPageSelected(int position) {
+				// on changing the page
+				// make respected tab selected
+				actionBar.setSelectedNavigationItem(position);
+			}
+
+			@Override
+			public void onPageScrolled(int arg0, float arg1, int arg2) {
+			}
+
+			@Override
+			public void onPageScrollStateChanged(int arg0) {
+			}
+		});
 	}
-
-
-	public void onSectionAttached(int number) {
-
-	}
-
-
 
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		if (!mNavigationDrawerFragment.isDrawerOpen()) {
-			// Only show items in the action bar relevant to this screen
-			// if the drawer is not showing. Otherwise, let the drawer
-			// decide what to show in the action bar.
-			getMenuInflater().inflate(R.menu.main, menu);
-			return true;
-		}
-		return super.onCreateOptionsMenu(menu);
+		
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
 	}
 
 	@Override
@@ -104,7 +85,40 @@ NavigationDrawerFragment.NavigationDrawerCallbacks{/*, ActionBar.TabListener{*/
 		if (id == R.id.action_settings) {
 			return true;
 		}
+		else if(id == R.id.action_help){
+			MainNavActivity.setState(5);
+			Intent i = new Intent(this, MainNavActivity.class);
+			startActivity(i);
+			return true;
+		}
+		else if(id == R.id.action_logout){
+			Intent i = new Intent(this, LoginActivity.class);
+			startActivity(i);
+			return true;
+		}
 		return super.onOptionsItemSelected(item);
+	}
+
+
+
+
+
+	@Override
+	public void onTabSelected(Tab tab, FragmentTransaction ft) {
+		// TODO Auto-generated method stub
+		viewPager.setCurrentItem(tab.getPosition());
+	}
+
+	@Override
+	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onTabReselected(Tab tab, FragmentTransaction ft) {
+		// TODO Auto-generated method stub
+
 	}
 
 

@@ -12,6 +12,10 @@ public class User {
 	private List<Account> accounts;
 	private List<Budget> budgets;
 	
+	public void addBudget(Budget b){
+		budgets.add(b);
+	}
+	
 	public String getName() {
 		return name;
 	}
