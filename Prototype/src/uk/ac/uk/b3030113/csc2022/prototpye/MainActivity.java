@@ -71,7 +71,7 @@ public  class MainActivity extends FragmentActivity implements ActionBar.TabList
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		
+
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
@@ -84,22 +84,18 @@ public  class MainActivity extends FragmentActivity implements ActionBar.TabList
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
 			Intent i = new Intent(this, SettingsActivity.class);
-			startActivity(i);
+			//Starts Activity and gives it requestCode = 2
+			startActivityForResult(i,2);
 			return true;
 		}
 		else if(id == R.id.action_help){
 			Intent i = new Intent(this, HelpActivity.class);
-			Bundle b = new Bundle();
-			b.putInt("category", 1);
-			i.putExtras(b);
-			startActivityForResult(i,1);
-			startActivity(i);
+			//Starts Activity and gives it requestCode = 2
+			startActivityForResult(i,2);
 			return true;
 		}
 		else if(id == R.id.action_logout){
-//			Intent i = new Intent(this, LoginActivity.class);
-//			startActivity(i);
-//			return true;
+			//End MainActivity
 			finish();
 		}
 		return super.onOptionsItemSelected(item);
@@ -109,8 +105,11 @@ public  class MainActivity extends FragmentActivity implements ActionBar.TabList
 	@Override
 	protected void onActivityResult(int requestCode,int resultCode, Intent data){
 		super.onActivityResult(requestCode, resultCode, data);
-		if(resultCode==0){
-			this.finish();
+		//If requestCode of parent equals 2 and resultCode of child is 1, then child requested to logout, thus MainActivity should finish
+		if(requestCode==2){
+			if(resultCode==1){
+				finish();
+			}
 		}
 	}
 

@@ -1,6 +1,7 @@
 package uk.ac.uk.b3030113.csc2022.prototpye;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 //import android.support.v4.app.Fragment;
@@ -12,7 +13,7 @@ import android.view.MenuItem;
 //import android.widget.TextView;
 
 public class HelpActivity extends Activity {
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,10 +37,17 @@ public class HelpActivity extends Activity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
+			Intent i = new Intent(this,SettingsActivity.class);
+			startActivity(i);
+			finish();
 			return true;
+		}
+		else if(id == R.id.action_logout){
+			setResult(1);
+			finish();
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	
-	
+
+
 }
