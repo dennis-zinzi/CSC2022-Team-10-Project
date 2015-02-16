@@ -12,6 +12,7 @@ public class User {
 	private List<Account> accounts;
 	private List<Budget> budgets;
 	private List<Contact> contacts;
+	private List<Wallet> wallets;
 	
 	
 	public User(String name, int userID){
