@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 public class BalanceFragment extends Fragment {
 	
-//	private static final String ARG_SECTION_NUMBER = "section_number";
+	private static final String ARG_SECTION_NUMBER = "section_number";
 
 	private RelativeLayout myLinearLayout;
 	private TextView budgetLabel1;
@@ -26,13 +26,13 @@ public class BalanceFragment extends Fragment {
 	Account a;
 	User u;
 
-//	public static BalanceFragment newInstance(int sectionNumber) {
-//		BalanceFragment fragment = new BalanceFragment();
-//		Bundle args = new Bundle();
-//		args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-//		fragment.setArguments(args);
-//		return fragment;
-//	}
+	public static BalanceFragment newInstance(int sectionNumber) {
+		BalanceFragment fragment = new BalanceFragment();
+		Bundle args = new Bundle();
+		args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+		fragment.setArguments(args);
+		return fragment;
+	}
 	public BalanceFragment() {
 		a = new Account(25,1096.67,2500.00);
 		u = new User("DZ",30);

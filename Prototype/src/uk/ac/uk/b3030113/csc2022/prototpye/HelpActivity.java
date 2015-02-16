@@ -40,4 +40,6 @@ public class HelpActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
+	
 }

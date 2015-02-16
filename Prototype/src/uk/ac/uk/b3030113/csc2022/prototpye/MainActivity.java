@@ -89,19 +89,30 @@ public  class MainActivity extends FragmentActivity implements ActionBar.TabList
 		}
 		else if(id == R.id.action_help){
 			Intent i = new Intent(this, HelpActivity.class);
+			Bundle b = new Bundle();
+			b.putInt("category", 1);
+			i.putExtras(b);
+			startActivityForResult(i,1);
 			startActivity(i);
 			return true;
 		}
 		else if(id == R.id.action_logout){
-			Intent i = new Intent(this, LoginActivity.class);
-			startActivity(i);
-			return true;
+//			Intent i = new Intent(this, LoginActivity.class);
+//			startActivity(i);
+//			return true;
+			finish();
 		}
 		return super.onOptionsItemSelected(item);
 	}
 
 
-
+	@Override
+	protected void onActivityResult(int requestCode,int resultCode, Intent data){
+		super.onActivityResult(requestCode, resultCode, data);
+		if(resultCode==0){
+			this.finish();
+		}
+	}
 
 
 	@Override
