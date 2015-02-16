@@ -15,18 +15,18 @@ public class TabbedPageAdapter extends FragmentPagerAdapter {
 	public Fragment getItem(int index) {
 
 		switch (index) {
-		case 0:
-			// Balance fragment
-			return new BalanceFragment();
-		case 1:
-			// Transfer fragment
-			return new TransferFragment();
-		case 2:
-			// Wallets fragment 
-			return new WalletFragment();
-		case 3:
-			// Banking fragment
-			return new BankingFragment();
+			case 0:
+				// Balance fragment
+				return new BalanceFragment();
+			case 1:
+				// Transfer fragment
+				return new TransferFragment();
+			case 2:
+				// Wallets fragment 
+				return new WalletFragment();
+			case 3:
+				// Banking fragment
+				return new BankingFragment();
 		}
 
 		return null;

@@ -39,5 +39,6 @@
     <string name="pound_symbol">£</string>
     <string name="euro_symbol">€</string>
     <string name="dollar_symbol">$</string>
+    <string name="title_activity_settings">Settings</string>
 
 </resources>

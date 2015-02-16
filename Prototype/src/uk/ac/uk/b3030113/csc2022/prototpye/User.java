@@ -11,6 +11,7 @@ public class User {
 	private String password;
 	private List<Account> accounts;
 	private List<Budget> budgets;
+	private List<Contact> contacts;
 	
 	
 	public User(String name, int userID){
@@ -59,5 +60,9 @@ public class User {
 	public List<Budget> getBudgets(){
 		return budgets;
 	}	
+	
+	public List<Contact> getContacts(){
+		return contacts;
+	}
 	
 }

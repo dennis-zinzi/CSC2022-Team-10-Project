@@ -3,6 +3,7 @@ package uk.ac.uk.b3030113.csc2022.prototpye;
 import java.util.*;
 
 public class Account {
+	
 	private int accountID;
 	private double balance;
 	private double overdraftLimit;
@@ -44,5 +45,9 @@ public class Account {
 	
 	public int getAccountID(){
 		return accountID;
+	}
+	
+	public List<Transaction> getTransaction(){
+		return transactionList;
 	}
 }
