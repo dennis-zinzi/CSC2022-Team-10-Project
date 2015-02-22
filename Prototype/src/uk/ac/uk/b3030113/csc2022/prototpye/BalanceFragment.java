@@ -64,7 +64,6 @@ public class BalanceFragment extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-
 				
 				myLinearLayout = (RelativeLayout) rootView.findViewById(R.id.balanceLayout);
 				RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);

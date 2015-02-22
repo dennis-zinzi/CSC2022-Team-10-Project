@@ -1,49 +1,87 @@
 package uk.ac.uk.b3030113.csc2022.prototpye;
 
 //import android.os.Build;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.support.v4.view.ViewPager;
-//import android.support.v4.widget.DrawerLayout;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.support.v4.app.FragmentActivity;
-//import android.support.v4.app.FragmentManager;
+import java.io.IOException;
+
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
-//import android.graphics.Color;
-//import android.net.Uri;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import com.google.android.gms.gcm.GoogleCloudMessaging;
 
-public  class MainActivity extends FragmentActivity implements ActionBar.TabListener{
+public class MainActivity extends FragmentActivity implements
+		ActionBar.TabListener {
 
 	private ViewPager viewPager;
 	private TabbedPageAdapter mAdapter;
 	private ActionBar actionBar;
-	//Tab names
-	private String[] tabNames = {"Balance","Transfer","Wallets","Banking"};
+	// Tab names
+	private String[] tabNames = { "Balance", "Transfer", "Wallets", "Banking" };
 
+	/* Notifications */
+	GoogleCloudMessaging gcm;
+	String regid;
+	String PROJECT_NUMBER = "752723874311";
+
+	public void getRegId() {
+		new AsyncTask<Void, Void, String>() {
+			@Override
+			protected String doInBackground(Void... params) {
+				InsertId ins = new InsertId();
+				String msg = "";
+				try {
+					if (gcm == null) {
+						gcm = GoogleCloudMessaging
+								.getInstance(getApplicationContext());
+					}
+					regid = gcm.register(PROJECT_NUMBER);
+					try {
+						ins.sendPost(regid);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					msg = "Device registered, registration ID=" + regid;
+					Log.i("GCM", msg);
+
+				} catch (IOException ex) {
+					msg = "Error :" + ex.getMessage();
+
+				}
+				return msg;
+			}
+		}.execute(null, null, null);
+	}
+
+	/* End of notifications */
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		setContentView(R.layout.activity_main);
 
 		setTitle("LLoyds Student");
-
+		getRegId(); // On every start register this device
 		viewPager = (ViewPager) findViewById(R.id.pager);
 		actionBar = getActionBar();
 		mAdapter = new TabbedPageAdapter(getSupportFragmentManager());
 
 		viewPager.setAdapter(mAdapter);
 		actionBar.setHomeButtonEnabled(false);
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);        
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 		// Adding Tabs
 		for (String tabName : tabNames) {
-			actionBar.addTab(actionBar.newTab().setText(tabName).setTabListener(this));
+			actionBar.addTab(actionBar.newTab().setText(tabName)
+					.setTabListener(this));
 		}
 
 		/**
@@ -68,7 +106,6 @@ public  class MainActivity extends FragmentActivity implements ActionBar.TabList
 		});
 	}
 
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -84,35 +121,32 @@ public  class MainActivity extends FragmentActivity implements ActionBar.TabList
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
 			Intent i = new Intent(this, SettingsActivity.class);
-			//Starts Activity and gives it requestCode = 2
-			startActivityForResult(i,2);
+			// Starts Activity and gives it requestCode = 2
+			startActivityForResult(i, 2);
 			return true;
-		}
-		else if(id == R.id.action_help){
+		} else if (id == R.id.action_help) {
 			Intent i = new Intent(this, HelpActivity.class);
-			//Starts Activity and gives it requestCode = 2
-			startActivityForResult(i,2);
+			// Starts Activity and gives it requestCode = 2
+			startActivityForResult(i, 2);
 			return true;
-		}
-		else if(id == R.id.action_logout){
-			//End MainActivity
+		} else if (id == R.id.action_logout) {
+			// End MainActivity
 			finish();
 		}
 		return super.onOptionsItemSelected(item);
 	}
 
-
 	@Override
-	protected void onActivityResult(int requestCode,int resultCode, Intent data){
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		//If requestCode of parent equals 2 and resultCode of child is 1, then child requested to logout, thus MainActivity should finish
-		if(requestCode==2){
-			if(resultCode==1){
+		// If requestCode of parent equals 2 and resultCode of child is 1, then
+		// child requested to logout, thus MainActivity should finish
+		if (requestCode == 2) {
+			if (resultCode == 1) {
 				finish();
 			}
 		}
 	}
-
 
 	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
@@ -132,6 +166,4 @@ public  class MainActivity extends FragmentActivity implements ActionBar.TabList
 
 	}
 
-
 }
-
